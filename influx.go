@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"time"
 
@@ -49,8 +50,10 @@ func write2influx(config *Configuration, responses []Response) {
 
 		// tags
 		tags := map[string]string{
-			"linenumber":  response.LineNumber,
-			"destination": response.Destination,
+			"linenumber":    response.LineNumber,
+			"destination":   response.Destination,
+			"siteid":        config.SiteID,
+			"sitedirection": fmt.Sprintf("%d", response.JourneyDirection),
 		}
 
 		// values
@@ -63,7 +66,7 @@ func write2influx(config *Configuration, responses []Response) {
 		}
 
 		// create new point
-		pt, err := client.NewPoint("SLLlatest", tags, fields, now)
+		pt, err := client.NewPoint("SLlatest", tags, fields, now)
 		if err != nil {
 			log.Fatal(err)
 		}
