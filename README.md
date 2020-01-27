@@ -7,12 +7,12 @@ The program takes a few options
 - -conf <filename> must be given and contains the configuration in YAML syntax
 - -verbose prints out information on the program run
 - -dryrun skips saving data to influxdb
-  
+
 ## Install
 Prerequistes are of course an installation of the Go language https://golang.org/
 and the following modules
 - YAML https://gopkg.in/yaml.v2
-- InfluxDB client https://github.com/influxdata/influxdb1-client 
+- InfluxDB client https://github.com/influxdata/influxdb1-client
 
 ## Configuration options
 ```
@@ -53,9 +53,9 @@ The measurement contains the following tags
 - sitedirection
 
 and the following values
-- TimeTableDateTime string in format YYYYMMDDTHH:MM:SS
+- TimeTableDateTime string in format YYYY-MM-DDTHH:MM:SS
 - TimeTableTimestamp unix timestamp computed from TimeTableDateTime
-- ExpectedDateTime strimg in format YYYYMMDDTHH:MM:SS
+- ExpectedDateTime strimg in format YYYY-MM-DDTHH:MM:SS
 - ExpectedTimestamp unix timestamp computed from ExpectedDateTime
 - DisplayTime string in varying format as is displayed on signs at stops
 
@@ -63,4 +63,3 @@ All times are given in Stockholm local time. Display time can be in format HH:MM
 
 ## Future development
 Please let me know if you would like to cover any other use cases.
-
