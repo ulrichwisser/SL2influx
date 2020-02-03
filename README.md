@@ -61,5 +61,10 @@ and the following values
 
 All times are given in Stockholm local time. Display time can be in format HH:MM or xx min or "Nu" (=Swedish for now).
 
+## API levels
+Please be aware that the start level (Brons) of your API-Key can only make 10k API calls per month.
+That is not enough to update the data every minute. At that level you can only request updates
+every 5 minutes. Silver level gives you already plenty of calls to work with.
+
 ## Future development
 Please let me know if you would like to cover any other use cases.
